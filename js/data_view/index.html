@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <table id="root" class="table table-striped">
+        <thead>
+            <td>序号</td>
+            <td>名字</td>
+            <td>花名</td>
+            <td>年纪</td>
+            <td>家乡</td>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+    
+        const students=[{
+
+            name:'吴珏莹',
+            age:18,
+            hometown:'南昌',
+            nickName:'ying'
+        }, {
+            name:'狗子',
+            age:20,
+            hometown:'抚州',
+            nickName:'三星',
+        }]
+        const tBodyEle = document.querySelector('#root tbody');
+
+        students.forEach((student,index )=>{
+            tBodyEle.innerHTML += `
+               <tr>
+                <td>${index+1}</td>
+                <td>${student.name}</td>
+                <td>${student.nickName}</td>
+                <td>${student.age}</td>
+                <td>${student.hometown}</td>
+               </tr>
+            `
+        })
+    </script>
+</body>
+</html>
