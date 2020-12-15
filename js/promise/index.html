@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // promise 许诺
+        // 异步 I/O 内存中 -》 硬盘   
+        // 还有别的办法吗？
+        // setTimeout(function(){
+        //    console.log(1);
+        // },1000);
+        // 许下一个诺言，
+        const p1 = new Promise((resolve,reject) => {
+
+            // 放费时的操作 百度 向后端发送请求 
+            // 去一个土味情话网站，给我们反馈一条情话，一来一回http本质？
+            // 花时间的？  花时间的事情请放promise里面 
+            // 异步
+            // 封装了一个http 一去一来的请求 花时间
+            // fetch 负责去取一下
+            fetch("http://127.0.0.1:64561/user.json")
+             .then(data => data.json())
+             .then(data => {
+                // console.log(data);
+                // resolve(data);
+                // 实现了这个诺言
+                resolve(data)
+            })
+            // setTimeout(() => {
+            // console.log(1);
+            //},1000)
+              console.log(3);
+               resolve(1);
+        })
+        
+                p1
+                    .then((data) => {
+                    console.log(data);
+        })
+        console.log(2);
+        // 如果先输入2 再输出1 
+    </script>
+</body>
+</html>
