@@ -1,0 +1,1 @@
+<van-button type="info" bindtap="upload">点击上传</van-button>
