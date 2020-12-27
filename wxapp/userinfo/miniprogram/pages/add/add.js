@@ -40,6 +40,7 @@ Page({
                   image: res.fileID
                 }
               }).then(res => {
+                // 成功了 toast 提示框
                 wx.showToast({
                   title: '上传成功',
                   icon: 'success'
