@@ -14,10 +14,14 @@
   商品列表 
   apifm-wxapi 提供数据 
   
+
 - 电商项目的感觉
-  搜索栏
+  搜索栏 
   导航栏
-  banners
-  推荐
+  banners 
+  推荐 
   商品列表
+
+- 总结一下搜索体验  把自己当小白
+  placeholder + padding-left + bindinput + bindConfirm + search 图标
   
