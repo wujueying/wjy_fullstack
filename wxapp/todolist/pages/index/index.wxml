@@ -1,0 +1,30 @@
+<!-- wxs 是微信程序的封装， -->
+<!--  module 服务于代码“复用” -->
+<wxs src="../../wxs/api.wxs" module="api"/>
+<view class="container">
+<view class="userinfo">
+<button size="mini" wx:if="{{!hasUserInfo&&canIUse}}"bindgetuserinfo="getUserInfo" open-type="getUserInfo">登录</button>
+<block wx:else>
+  <image class="userinfo-avatar"src="{{userInfo.avatarUrl}}"></image>   
+  <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+</block>
+</view>
+<view class="titleBar">
+  <view class="status">
+    <text class="{{status === '1'?'active':''}}" data-status="1" bindtap="showStatus">已完成</text>  
+  </view>
+  <view class="status">
+    <text class="{{status === '2'?'active':''}}" data-status="2" bindtap="showStatus">未完成</text>    
+  </view>
+  <view class="status">
+    <text class="{{status === '3'?'active':''}}" data-status="3" bindtap="showStatus">全部</text>  
+  </view> 
+  <view class="add">
+    <button class="mini-btn"size="mini"
+      bindTap="addTodoShow"
+      type="warn">+添加
+    </button>
+  </view>
+</view>
+</view>
+<text>{{api.formatTime(1609397067763)}}</text> 
