@@ -17,3 +17,17 @@
      prototype 啥玩意 
      call 借
 
+- call apply 借用方法， fn.call(绑定this,参数1,参数2,....)
+fn.apply(绑定this,[参数1，参数2,....])
+## 继承的几种方式
+
+1. 构造函数的绑定
+2. prototype模式
+3. 直接继承prototype
+4. 利用空对象作为中介 
+
+2跟3，3的优点效率比较高（不用执行和建立Animal的实例了），
+缺点是Cat.prototype和Animal.prototype指向同一个对象，
+在理解上有点不妥,会改变父类的原型对象
+
+

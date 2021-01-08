@@ -2,6 +2,7 @@ function Cat(name,color){
     // new的过程一定会执行Cat
     this.name = name;  // this?指向他实例
     this.color = color;
+    // 内存 
     // return this
     // this.type = '猫科动物';
     // prototype 要生成的原因, 
