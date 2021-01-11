@@ -1,0 +1,8 @@
+.box
+    color white
+    display flex
+    align-items: center
+    justify-content center
+   for n in (1..9)
+      &:nth-child({n})  // 花括号是指里面要有变量
+          background-color rgba(n*20,n*5,n*9,n*0.1)
