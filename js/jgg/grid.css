@@ -25,3 +25,12 @@
 .box:nth-child(9) {
   background-color: rgba(180,45,81,0.9);
 }
+.box:nth-child(10) {
+  background-color: rgba(200,50,90,1.0);
+}
+.box:nth-child(11) {
+  background-color: rgba(220,55,99,1.1);
+}
+.box:nth-child(12) {
+  background-color: rgba(240,60,108,1.2);
+}

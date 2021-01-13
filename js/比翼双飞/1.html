@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>比翼双飞</title>
+    <style>
+        .container {
+  border: 1px solid black;
+}
+/* 清除浮动 */
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.main,.left,.right {
+  float: left;
+}
+
+.main {
+  background: #ccc;
+  width: 100%;
+}
+
+.left {
+  background: red;
+  width: 100px;
+  margin-left: -100%;
+}
+
+.right {
+  background: blue;
+  width: 120px;
+  margin-left: -120px;
+}
+    </style>
+</head>
+<body>
+    <div class="container clearfix">
+        <div class="main">main</div>
+        <div class="left">left</div>
+        <div class="right">right</div>
+      </div>
+</body>
+</html>
