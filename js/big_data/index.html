@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./common.css">
+    <link rel="stylesheet" href="./data.styl">
+</head>
+<body>
+    <!-- 10000条新闻  ipv4  32位，ipv6  128位， -->
+    <!-- 拍照的摄像头mv  物联网设备  生产很多数据 -->
+    <div class="news-header"></div>
+    <div class="news"></div>
+    <!-- 新闻的container -->
+    <div class="news-footer"></div>
+    <!-- 最小学习原理  明天不上课 -->
+    <script src="./src/index.js">
+    // 10000  条数据？ Array.from  内存
+    // 4yu  10000  originNewa  200个数组[[50],[50]]
+    let page = 0;  // 页码
+    let pageNum = Math.ceil(window.innerHeight / 50);
+    const chunk = (arr,size) => Array.from({
+        length:Math.ceil(arr.length / size)
+    },(v,i) =>
+    arr.slice(i * size,i*size + size)) 
+
+
+    const originNews = Array.from({
+        length:1000
+    },(v,k)=>({
+        content:`新闻$(k)`
+    }))
+    let news = chunk(originNews,pageNum)  // 当前页需要的数据
+    // console.log(originNews)
+
+    const element = document.querySelector('.news');  // 代孕的
+    const loadObserver = new IntersectionObserver(()=>{
+
+    },{
+
+    })  // 监听
+
+    </script>
+</body>
+</html>
