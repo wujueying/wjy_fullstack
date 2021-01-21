@@ -41,7 +41,7 @@
   background-color:white;
 }
 .bg-gray{
-  background-color: rgba(211, 211,211);
+  background-color: rgb(230, 229, 229);
 }
 .overflow{
   overflow: auto;
@@ -52,7 +52,7 @@
 .INinputheader{
   width:60%;
   height:30px;
-  background:rgba(211, 211,211);
+  background:rgba(211,211,211);
   border-radius:30px;
   font-size: 14px;
   margin-top:7px;

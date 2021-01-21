@@ -1,2 +1,53 @@
 /* pages/commend/commend.wxss */
 
+/* 类型 */
+.type-container{
+  display: flex;
+  padding: 5rpx 20rpx 0 20rpx;
+  position: relative;
+  top: -310px;
+  background-color: white;
+  margin-top: 15rpx;
+  justify-content: flex-start;
+}
+ 
+.type-container .type-item{
+  flex: 1;
+  height: 60rpx;
+}
+.type-container .type-item view{
+  font-size: 25rpx;
+  text-align: center;
+  line-height: 60rpx;
+  border-radius: 10rpx 10rpx 0 0;
+  margin: 0 3rpx;
+}
+.type-container .type-item .type-item-on{
+  background-color: red;
+  box-shadow: 3rpx grey;
+  font-weight:bold;
+}
+
+/* 列表 */
+.fruit-container{
+  display: flex;
+  justify-content: space-between;
+  width: 710rpx;
+  margin: 20rpx;
+  border-radius: 10rpx 10rpx 0 0;
+  position: relative;
+  top: -100rpx;
+}
+
+.goods-item{
+  width: 345rpx;
+  overflow: hidden;
+  border-radius: 15rpx;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+  box-shadow: 3.5rpx 3.5rpx 1rpx #d3d1d1;
+}
+.goods-item .goods-image image{
+  width: 100%;
+  height: 100%;
+}
