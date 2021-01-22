@@ -38,7 +38,7 @@
 
   </view>
   <view class="goods-container">
-    <block wx:for="{{goodsInfo}}" wx:key="{{goods-board}}">
+    <block wx:for="{{goodsInfo}}" wx:key="goodsId">
       <view class="goods-item"bindtap="tapToDetail"data-gID="{{item.id}}"wx:if="{{item.onShow}}">
          <view class="goods-image">
            <image src="{{item.imgUrl}}" mode="aspectFill"></image>

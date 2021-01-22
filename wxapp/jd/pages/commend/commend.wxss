@@ -29,14 +29,16 @@
 }
 
 /* 列表 */
-.fruit-container{
+.goods-container{
+  flex-wrap: wrap;
   display: flex;
+  padding: 5rpx 20rpx 0 20rpx;
   justify-content: space-between;
   width: 710rpx;
   margin: 20rpx;
   border-radius: 10rpx 10rpx 0 0;
   position: relative;
-  top: -100rpx;
+  top: -750rpx;
 }
 
 .goods-item{
@@ -46,6 +48,11 @@
   margin-bottom: 20rpx;
   background-color: #fff;
   box-shadow: 3.5rpx 3.5rpx 1rpx #d3d1d1;
+}
+.goods-item .goods-image{
+  height: 320rpx;
+  width: 345rpx;
+  border: 1rpx;
 }
 .goods-item .goods-image image{
   width: 100%;
