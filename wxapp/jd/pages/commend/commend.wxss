@@ -35,26 +35,59 @@
   padding: 5rpx 20rpx 0 20rpx;
   justify-content: space-between;
   width: 710rpx;
-  margin: 20rpx;
+  margin: 10rpx;
   border-radius: 10rpx 10rpx 0 0;
   position: relative;
-  top: -750rpx;
+  top: -730rpx;
 }
 
-.goods-item{
+ .goods-item{
   width: 345rpx;
-  overflow: hidden;
+  overflow: visible;
   border-radius: 15rpx;
   margin-bottom: 20rpx;
   background-color: #fff;
   box-shadow: 3.5rpx 3.5rpx 1rpx #d3d1d1;
 }
-.goods-item .goods-image{
+ .goods-item .goods-image{
   height: 320rpx;
   width: 345rpx;
   border: 1rpx;
 }
+
 .goods-item .goods-image image{
   width: 100%;
   height: 100%;
+}
+
+.goods-item .goods-info{
+  margin: 15rpx 0 10rpx 10rpx;
+}
+.goods-item .goods-info .name{
+  display: block;
+  font-size: 35rpx;
+}
+.goods-item .goods-info .line2{
+   display: flex;
+   margin-top: 10rpx;
+   justify-content: space-between;
+   padding-right: 20rpx;
+   align-items: center;
+}
+.goods-item .goods-info .line2 image{
+  width: 80rpx;
+  font-size: 35rpx;
+  color: red;
+} 
+.goods-item .goods-info .price {
+   font-size: 35rpx;
+   width: 200rpx;
+   color: orangered;
+}
+.goods-item .goods-info .price .unit{
+  font-size: 20rpx;
+}
+.goods-item .goods-info image{
+  width: 50rpx;
+  height: 50rpx;
 }

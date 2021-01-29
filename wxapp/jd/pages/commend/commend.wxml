@@ -8,10 +8,9 @@
       </view>
     </view>
   </view>
-  <scroll-view class='bg-gray overflow' style='height:calc(100vh - {{navH}}px)' scroll-y >
+   <!-- 轮播图 -->
+  <scroll-view class='overflow' style='height:calc(100vh - {{navH}}px)' scroll-y >
     <view class='hidden'>
-      <!-- 轮播图 -->
-      <view>
         <swiper indicator-dots="{{true}}" autoplay="true" >
           <swiper-item>
             <image src='/jd_images/a.png'style="height: 100%; width: 100%"></image>
@@ -23,7 +22,6 @@
             <image src='/jd_images/c.png'style="height: 100%; width: 100%"></image>
           </swiper-item>
         </swiper>
-      </view>
     </view>
   </scroll-view>
   <!-- 分类展示 -->
@@ -34,26 +32,27 @@
     </view>
     </view>
   </view>
-  <view class="goods-container">
-
-  </view>
+  
   <view class="goods-container">
     <block wx:for="{{goodsInfo}}" wx:key="goodsId">
-      <view class="goods-item"bindtap="tapToDetail"data-gID="{{item.id}}"wx:if="{{item.onShow}}">
+      <view class="goods-item"bindtap="tapToDetail"data-gID="{{item._id}}"wx:if="{{item.onShow}}">
          <view class="goods-image">
            <image src="{{item.imgUrl}}" mode="aspectFill"></image>
+         </view>
            <view class="goods-info">
+
              <view class="line1">
                <text class="name">{{item.name}}</text>
              </view>
+             
              <view class="line2">
                <text class="price">￥{{item.price}}</text>
-               <image src="../../jd_images/4.png" mode="aspectFit"catchtap="addCarByHome"data-_id="{{item._id}}"></image>
+               <image src="/jd_images/4.png" mode="aspectFit"catchtap="addCarByHome"data-_fid="{{item._id}}"></image>
                <text class="unit">{{item.unit}}</text>           
              </view>
             
                             
-            </view>
+            
          </view>
       </view>
     </block>

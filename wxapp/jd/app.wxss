@@ -40,9 +40,7 @@
 .bg-white{
   background-color:white;
 }
-.bg-gray{
-  background-color: rgb(230, 229, 229);
-}
+
 .overflow{
   overflow: auto;
 }
