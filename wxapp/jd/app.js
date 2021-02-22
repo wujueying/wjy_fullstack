@@ -17,6 +17,10 @@ App({
     navHeight: 0
   },
 
+  // 合局的列表查询方法  全局共享的方法
+  // setName  表名
+  // ruleItem  条件
+  // orderFun  排序方式
   getInfoByOrder(setName, ruleItem, orderFunc, callback) {
     const db = wx.cloud.database();
     db

@@ -23,6 +23,7 @@
           </swiper-item>
         </swiper>
     </view>
+    
   </scroll-view>
   <!-- 分类展示 -->
   <view class="type-container">

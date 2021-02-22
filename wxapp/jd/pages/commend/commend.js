@@ -1,6 +1,7 @@
 // pages/commend/commend.js
 wx. cloud. init()
-const app = getApp();//设立顶部栏高度
+const app = getApp();// 全局方法  app.js  定义的全局方法
+
 Page({
   data:{
     isShow:false,
@@ -60,6 +61,8 @@ Page({
    */
   onShow: function () {
     // console.log('show')
+    // 封装所有的请求为一个方法
+    // app  当前应用
     app.getInfoByOrder('goods-board', 'time', 'desc', e => {
       this.setData({
         goodsInfo: e.data,
