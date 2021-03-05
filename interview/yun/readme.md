@@ -12,3 +12,10 @@
         root    password  
     - web 服务   Ngnix 安装
       安装ngnix 的依赖
+      yum -y install gcc gcc-cc autoconf pcre-devel make automake
+      yum -y install wget httpd-tools vim
+
+      yum list | grep ngnix
+      yum install ngnix
+      ngnix -v
+      
