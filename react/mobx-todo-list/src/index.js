@@ -1,17 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+import React from 'react';  
+import ReactDOM from 'react-dom';   
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+// 复杂应用 都是可以细分的 
+// 组件和数据是分离的 
+
+import store from './store';   // 组件与数据流的模块化
+// 给我们的组件提供状态管理 
+import {Provider} from 'mobx-react';   
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+    <React.StrictMode>
+        <Provider store={store}>
+            <App />
+        </Provider>
+    </React.StrictMode>,
+    document.body
+)

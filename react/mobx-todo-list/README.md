@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# react 实战
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+react 全家桶 +  前端
 
-## Available Scripts
+react + koa  全栈
 
-In the project directory, you can run:
+定时应用
+setInterval js es5
+-> 
+react state setState data  响应式
+redux mobx 
 
-### `yarn start`
+state -> 可以被观察的对象 observerable
+界面更新 单向绑定  
+组件类的表达  自身的状态 -> 响应式
+数据 父组件 -> 传递给子组件
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+redux 如果是没有关系的组件 共享数据和状态怎么办？
+redux
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
+1. 专业的数据流管理  redux  mobx 
+2. 正规的流程  绝对不会出问题，手续 
+action applyTravel(20000)
+reducer  ->  纯函数 算账的过程  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+store 中央仓库
+local -> 中央
+new Store  做公司  请了个财务
+申请 10万  用于旅游
+部门A  部门B  
 
-### `yarn build`
+# mbox 更简单的数据流管理 
+1. observable 观察(组件)与被观察(有状态的实例)
+2. Store Provider 
+  从Store 里去借 redux connect mobx @inject
+  HOC 
+  () => {  // @inject
+    this.props.store
+      return () => {
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+      }
+  }
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  3. store 分支
