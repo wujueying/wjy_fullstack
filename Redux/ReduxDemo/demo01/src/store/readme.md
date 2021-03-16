@@ -1,0 +1,1 @@
+# 建立了仓库store 和管理员 reducer
