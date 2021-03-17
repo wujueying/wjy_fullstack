@@ -1,28 +1,62 @@
-import React from 'react';
+import React,{ useState,useMemo } from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'mobx-react';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import articlesStore from './stores/articlesStore';
-import usersStore from './stores/usersStore'
-import { HashRouter } from 'react-router-dom';
+// Hooks
 
-const stores = {
-  articlesStore: articlesStore,//大的仓库可以分成很多间小部分
-  usersStore:usersStore
-} 
+
+const Child2 = React.memo(Child);
+
+
+function App(){
+    const [n,setN] = useState(0);
+    const [m,setM] = useState(0);
+    const [k,setK] = useState(0);
+    // 全面的函数式编程风格
+    const add = () => {
+        setN( i=>i + 1 )
+    }
+    const addChild = () => {
+        setM(i=>i+1)
+    }
+
+    // const onClickChild = () => {
+
+    // };
+
+    const onClickChild = useMemo(() => {
+        // 原来该做的事件
+        return () => {
+            console.log(m)
+        }
+    },[m])
+    return(
+        <div>
+            <div>
+            n:{n}
+            k:{k}
+            <button onClick={add}>n+1</button>
+            <button onClick={addChild}>m+1</button>
+            </div>
+            <div>
+                {/* <Child data={m} /> */}
+                <Child2 data={m} onClick={onClickChild} />
+            </div>
+        </div>
+    )
+}
+
+function Child(props){
+    console.log('child 执行了');
+    return(
+        <div onClick={props.onClick}>
+            child:{props.data}
+
+        </div>
+    )
+}
+
+
 
 ReactDOM.render(
-  <Provider {...stores}>
-    <HashRouter>
-      <App />
-    </HashRouter>
-  </Provider>,
-  document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+    <App />,
+    document.getElementById('root')
+)
