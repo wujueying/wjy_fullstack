@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "dependencies": {
     "koa": "^2.13.1",
@@ -5,3 +6,12 @@
     "koa-static": "^5.0.0"
   }
 }
+=======
+{
+  "dependencies": {
+    "koa": "^2.13.1",
+    "koa-mount": "^4.0.0",
+    "koa-static": "^5.0.0"
+  }
+}
+>>>>>>> 6da7d2f51ab5f40cd7b50c2c80bba2eeeae640b6

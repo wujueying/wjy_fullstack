@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // 配置文件
 {
     "compilerOptions": {
@@ -16,4 +17,24 @@
     },
     "include": ["src/**/*"],
     "exclude": ["node_modules", "dist"]
+=======
+// 配置文件
+{
+    "compilerOptions": {
+      "module": "commonjs",
+      "declaration": true,
+      "removeComments": true,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "allowSyntheticDefaultImports": true,
+      "esModuleInterop": true,
+      "target": "es2017",
+      "sourceMap": true,
+      "outDir": "./dist",
+      "baseUrl": "./",
+      "incremental": true
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "dist"]
+>>>>>>> 6da7d2f51ab5f40cd7b50c2c80bba2eeeae640b6
   }
