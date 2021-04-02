@@ -1,8 +1,8 @@
 // 三个模块 
-import product from './product';
+import product, {zz} from './product';
 
 const api = {
-    product
+  product
 }
 
 export default api;
