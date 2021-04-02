@@ -72,10 +72,10 @@ const Detail = (props) => {
           <span>购物车</span>
         </div>
         <div className="btn">
-          <a href="javascript:;" onClick={ev=>{
+          <a href="javascript" onClick={ev=>{
             handle(ev, 'ADD')
           }}>加入购物车</a>
-          <a href="javascript:;" onClick={ev=>{
+          <a href="javascript" onClick={ev=>{
             handle(ev, 'PAY')
           }}>立即购买</a>
         </div>
