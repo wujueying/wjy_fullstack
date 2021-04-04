@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="zw.jpg" alt="" data-src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fs9.sinaimg.cn%2Fmiddle%2F74a24f0fha21c8f72ded8%26690&refer=http%3A%2F%2Fs9.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1620100220&t=36caf7ee0f0cbff1a2c782dddaf1720f">
+    <img src="zw.jpg" alt="" data-src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fs9.sinaimg.cn%2Fmiddle%2F74a24f0fha21c8f72ded8%26690&refer=http%3A%2F%2Fs9.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1620100220&t=36caf7ee0f0cbff1a2c782dddaf1720f">
+    <img src="zw.jpg" alt="" data-src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fs9.sinaimg.cn%2Fmiddle%2F74a24f0fha21c8f72ded8%26690&refer=http%3A%2F%2Fs9.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1620100220&t=36caf7ee0f0cbff1a2c782dddaf1720f">
+    <img src="zw.jpg" alt="" data-src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fs9.sinaimg.cn%2Fmiddle%2F74a24f0fha21c8f72ded8%26690&refer=http%3A%2F%2Fs9.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1620100220&t=36caf7ee0f0cbff1a2c782dddaf1720f">
+    <img src="zw.jpg" alt="" data-src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fs9.sinaimg.cn%2Fmiddle%2F74a24f0fha21c8f72ded8%26690&refer=http%3A%2F%2Fs9.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1620100220&t=36caf7ee0f0cbff1a2c782dddaf1720f">
+    <img src="zw.jpg" alt="" data-src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fs9.sinaimg.cn%2Fmiddle%2F74a24f0fha21c8f72ded8%26690&refer=http%3A%2F%2Fs9.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1620100220&t=36caf7ee0f0cbff1a2c782dddaf1720f">
+    <img src="zw.jpg" alt="" data-src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F7%2F584260a8b8615.jpg&refer=http%3A%2F%2Fpic1.win4000.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1620104499&t=1532c02d2cbe6243f6c596f4e0c7d77d">
+    <img src="zw.jpg" alt="" data-src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F7%2F584260a8b8615.jpg&refer=http%3A%2F%2Fpic1.win4000.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1620104499&t=1532c02d2cbe6243f6c596f4e0c7d77d">
+    <img src="zw.jpg" alt="" data-src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F7%2F584260a8b8615.jpg&refer=http%3A%2F%2Fpic1.win4000.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1620104499&t=1532c02d2cbe6243f6c596f4e0c7d77d">
+    <img src="zw.jpg" alt="" data-src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F7%2F584260a8b8615.jpg&refer=http%3A%2F%2Fpic1.win4000.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1620104499&t=1532c02d2cbe6243f6c596f4e0c7d77d">
+    <script>
+        let imgList = [...document.querySelectorAll('img')];
+        let length = imgList.length;
+        document.addEventListener('scroll',imgLazyload);
+        function imgLazyload(){
+            let count = 0; // 有多少张照片已经完成加载
+            return function(){
+                let deleteIndexList = [];
+                imgList.forEach((img, index) => {
+                    let rect = img.getBoundingClientRect()
+                    if(rect.top < window.innerHeight) {
+                        img.src = img.dataset.src;
+                        deleteIndexList.push(index);
+                        count++;
+                        if(count === length){
+                            document.removeEventListener('scroll',imgLazy)
+                        }
+                    }
+                })
+                imgList = imgList.filter((img,index) => 
+                !deleteIndexList.includes(index))
+            }
+        }
+    </script>
+</body>
+</html>
