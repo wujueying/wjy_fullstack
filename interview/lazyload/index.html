@@ -30,9 +30,9 @@
                     if(rect.top < window.innerHeight) {
                         img.src = img.dataset.src;
                         deleteIndexList.push(index);
-                        count++;
+                        count ++;
                         if(count === length){
-                            document.removeEventListener('scroll',imgLazy)
+                            document.removeEventListener('scroll',imgLazy())
                         }
                     }
                 })
