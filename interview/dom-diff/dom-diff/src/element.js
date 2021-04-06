@@ -11,7 +11,7 @@ const createElement = (type,props,children) => {
 }
 // 真实 DOM 结点   DOM对象
 // JSX  => VirtualDOM 
-const render = (domObj) => {
+const render = (domObj) => {  
     let el = document.createElement(domObj.type);
     for(let key in domObj.props){
         setAttr(el,key,domObj.props[key]);
