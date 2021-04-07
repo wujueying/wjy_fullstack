@@ -5,11 +5,10 @@ import diff from './diff';
 // 树  递归  最后结点是文本结点的时候就退出
 // 相同的操作 1. 创建结点   2. 设置属性  3. 子节点
 
-{/* <ul class="list">
-    <li class="item">白敬亭</li>
-    <li class="item">婷婷</li>
-    <li>王燕杰</li>
-</ul> */}
+<ul class="list">
+    <li class="item">wjy</li>
+    <li class="item">易烊千玺</li>
+</ul> 
 
 // DOM 树的表达转换形式 
 let virtualDOM = createElement('ul', {
@@ -17,25 +16,25 @@ let virtualDOM = createElement('ul', {
 }, [
   createElement('li',{
     class:'item'
-  },['白敬亭']),
+  },['wjy']),
   createElement('li',{
     class:'item'
-  },['婷婷']),
+  },['易烊千玺']),
 ])
 
-// console.log(virtualDOM);
+console.log(virtualDOM);
 let el = render(virtualDOM);
 // console.log(el,'-----');
 
-let virtualDOM2 = createElement('ul',{
-  class:'list-group'
-},[
-  createElement('li',{class:'item active'},['七里香']),
-  createElement('li',{class:'item'},['一千年以后']),
-  createElement('li',{class:'item'},['菊花台']),
-]);
+// let virtualDOM2 = createElement('ul',{
+//   class:'list-group'
+// },[
+//   createElement('li',{class:'item active'},['七里香']),
+//   createElement('li',{class:'item'},['一千年以后']),
+//   createElement('li',{class:'item'},['菊花台']),
+// ]);
 
 renderDOM(el,document.getElementById('root'));
 // 补丁 
-let patches = diff(virtualDOM,virtualDOM2);
-console.log(pathes);
+// let patches = diff(virtualDOM,virtualDOM2);
+// // console.log(pathes);
