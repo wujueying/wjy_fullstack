@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "3318509jue",
+    "database": "try_egg_graphql",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "3318509jue",
+    "database": "try_egg_graphql",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
