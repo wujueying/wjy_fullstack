@@ -46,12 +46,12 @@ export default {
       swiperList: [],
       categoryList: [
         {
-          name: "嘉新超市",
+          name: "夹心超市",
           imgUrl: "//s.yezgea02.com/1604041127880/%E8%B6%85%E5%B8%82%402x.png",
           categoryId: 100001,
         },
         {
-          name: "嘉新服饰",
+          name: "夹心服饰",
           imgUrl: "//s.yezgea02.com/1604041127880/%E6%9C%8D%E9%A5%B0%402x.png",
           categoryId: 100003,
         },
@@ -62,12 +62,12 @@ export default {
           categoryId: 100002,
         },
         {
-          name: "嘉新生鲜",
+          name: "夹心生鲜",
           imgUrl: "//s.yezgea02.com/1604041127880/%E7%94%9F%E9%B2%9C%402x.png",
           categoryId: 100004,
         },
         {
-          name: "嘉新到家",
+          name: "夹心到家",
           imgUrl: "//s.yezgea02.com/1604041127880/%E5%88%B0%E5%AE%B6%402x.png",
           categoryId: 100005,
         },
