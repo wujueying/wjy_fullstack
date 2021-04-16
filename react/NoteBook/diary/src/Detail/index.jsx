@@ -2,8 +2,15 @@ import React from 'react';
 import { NavBar, Icon, List } from 'antd-mobile';
 import {getQueryString} from '../utils';
 import {useHistory, Link} from 'react-router-dom';
+import axios from 'axios';
 
 const Detail = () => {
+    const [detail,setDetail] = useState({})
+    useEffect(() => {
+      axios.get(`/detail/${id}`).then(({data}) => {
+        
+      })
+    },[])
     const id = getQueryString('id')
     const history = useHistory()
   return (

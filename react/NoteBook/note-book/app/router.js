@@ -11,4 +11,9 @@ module.exports = app => {
   router.get('/getid/:id', controller.user.getid)
   router.post('/add', controller.user.add)
   router.get('/getUser', controller.user.add)
+  // note-book
+  router.get('/list',controller.home.list)
+  router.post('/add',controller.home.add)
+  router.post('/edit',controller.home.update)
+  router.post('/detail/:id',controller.home.getDiaryById)
 };
