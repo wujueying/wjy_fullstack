@@ -87,7 +87,7 @@ const bundle = (file) => {
             eval(code)
         })(absRequire, exports, graph[file].code)
     }
-     require(${file})
+     require("${file}")
   })(${depsGraph})`
  
 }
