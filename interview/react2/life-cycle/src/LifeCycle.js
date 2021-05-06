@@ -1,4 +1,4 @@
-import React,{Component} from 'react';
+import React, {Component} from 'react';
 
 export default class LifeCycle extends Component {
     static defaultProps = {
@@ -15,12 +15,12 @@ export default class LifeCycle extends Component {
     componentWillUnmount(){
         console.log('2. componentWillMount 组件将要挂载')
     }
-    componentDidMount(){
+    componentDidMount(){ 
         console.log('4. componentDidMount 组件已挂载')
         // fetch 
     }
     add = () => {
-        this.setState({ number: this.state.number });
+        this.setState({ number: this.state.number + 1 });
     }
     render(){
         console.log('3. render渲染， 也就是挂载')
