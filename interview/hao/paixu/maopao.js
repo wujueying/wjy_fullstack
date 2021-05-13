@@ -11,7 +11,7 @@ function maopao(elements){
 }
 
 var elements = [2236,89,6,51,48,56,100];
-console.log('排序前'+elements);
+console.log('排序前' + elements);
 maopao(elements);
 console.log('排序后'+elements);
 

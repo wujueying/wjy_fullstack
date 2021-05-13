@@ -10,7 +10,7 @@ function insertSort(arr){
         arr[preIndex+1] = current; //将arr[i]插入预留出来的空位
     }
     return arr;
-}
+} 
 
 var arr = [23,45,56,5,4,89,568]
 console.log('排序前：' + arr);
