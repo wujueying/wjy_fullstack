@@ -6,7 +6,8 @@ function buildMaxHeap(arr){ // 建立大顶堆
     for(var i = Math.floor((len-1)/2); i >= 0; i--){
         heapify(arr, i);
     }
-}
+} 
+
 
 // 调整堆的顺序，保证是
 function heapify(arr,i){
