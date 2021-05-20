@@ -8,7 +8,7 @@ import { AtTabBar } from 'taro-ui';
 import { songType } from '../../constants/commonTypes';
 import api from '../../services/api';
 import CLoading from '../../components/CLoading';
-import Taro from '@tarojs/taro';
+import Taro from '@tarojs/taro'
 // #region 书写注意
 //
 // 目前 typescript 版本还无法在装饰器模式下将 Props 注入到 Taro.Component 中的 props 属性
