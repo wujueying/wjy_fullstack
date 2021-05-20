@@ -8,7 +8,6 @@ import { AtTabBar } from 'taro-ui';
 import { songType } from '../../constants/commonTypes';
 import api from '../../services/api';
 import CLoading from '../../components/CLoading';
-import Taro from '@tarojs/taro';
 // #region 书写注意
 //
 // 目前 typescript 版本还无法在装饰器模式下将 Props 注入到 Taro.Component 中的 props 属性
@@ -26,7 +25,8 @@ type PageStateProps = {
     name: string,
     picUrl: string,
     playCount: number
-  }>
+  }>,
+  showLoading: boolean 
 }
 
 type PageDispatchProps = {
@@ -40,8 +40,7 @@ type PageState = {
     typeTitle: string,
     pic: string,
     targetId: number
-  }>,
-  showLoading: boolean
+  }>
 }
 
 type IProps = PageStateProps & PageDispatchProps & PageOwnProps
@@ -67,18 +66,9 @@ class Index extends Component <IProps, PageState>{
   }
   componentWillReceiveProps (nextProps) {
     console.log(this.props, nextProps)
-    this.setState({
-      showLoading: false 
-    })
   }
   componentDidMount() {
-    this.getBanner();
-    this.getPersonalized();
-  }
-  getPersonalized() {
-    this.props.getRecommendPlayList();
-  }
-  getBanner() {
+
     api.get('/banner', {
       type: 2
     }).then(data => {
@@ -89,21 +79,20 @@ class Index extends Component <IProps, PageState>{
         })
       }
     })
+    this.getPersonalized();
+    this.getBanner();
   }
-
+  getPersonalized(){
+    this.props.getRecommendPlayList();
+  }
   componentWillUnmount () { }
 
   componentDidShow () { }
 
   componentDidHide () { }
-  goDetail(item){
-    Taro.navigateTo({
-      url:`/pages/playListDetail/index?id=${item.id}$name={item.name}`
-    })
-  }
+
   render () {
-    const { recommendPlayList } = this.props
-    const { bannerList, showLoading } = this.state
+    const { bannerList } = this.state
     console.log(bannerList, '|||||||||||||')
     return (
       <View className='index_container'>
@@ -121,33 +110,8 @@ class Index extends Component <IProps, PageState>{
             </SwiperItem>  
           )}
         </Swiper>
-        <View className="recommend_playlist">
-          <View className="recommend_playlist__title">
-            推荐歌单
-          </View>
-          <View className="recommend_playlist__content">
-          {
-            recommendPlayList.map((item) => 
-              <View key={item.id} 
-                className='recommend_playlist__item'
-                onClick={this.goDetail.bind(this, item)}
-              >
-                  <Image 
-                    src={`${item.picUrl}?imageView&thumbnail=250x0`}
-                    className='recommend_playlist__item__cover'
-                  />
-                  <View className="recommend_playlist__item__cover__num">
-                    <Text className="at-icon at-icon-sound"></Text>
-                    {item.playCount}
-                  </View>
-                  <View className="recommend_playlist__item__title">{item.name}</View>
-              </View>
-            )
-          }
-          </View>
-        </View>
       </View>
-    )
+    ) 
   }
 }
 
