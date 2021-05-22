@@ -1,0 +1,23 @@
+{
+  "name": "blog",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^4.6.2",
+    "@zeit/next-css": "^1.0.1",
+    "antd": "^4.15.6",
+    "babel-plugin-import": "^1.13.3",
+    "next": "10.2.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "webpack": "^4.4.0"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^5.3.1"
+  }
+}
