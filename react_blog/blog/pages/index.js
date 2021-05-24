@@ -1,9 +1,13 @@
 import React,{useState} from 'react'
 import Head from 'next/head'
-import {Row, Col, List,Icon} from 'antd'
-// import { Icon } from '@ant-design/compatible';
+import {Row, Col, List} from 'antd'
+import { FireOutlined, CalendarOutlined, FolderOutlined } from '@ant-design/icons';
 import Header from '../components/Header'
-import '../static/style/pages/index.css';
+import '../static/style/pages/index.css'
+import Author from '../components/Author'
+import Advert from '../components/Advert'
+import Footer from '../components/Footer'
+
 
 const Home = () => {
   const [mylist, setMylist] = useState(
@@ -31,9 +35,9 @@ const Home = () => {
               <List.Item>
                 <div className="list-title">{item.title}</div>
                 <div className="list-icon">
-                  <span><Icon type="calendar" /> 2020-05-20</span>
-                  <span><Icon type="folder" /> 视频教程</span>
-                  <span><Icon type="fire" /> 6005人</span>
+                  <span><CalendarOutlined /> 2020-05-20</span>
+                  <span><FolderOutlined /> 视频教程</span>
+                  <span><FireOutlined /> 6005人</span>
                 </div>
                 <div className="list-context">{item.context}</div> 
               </List.Item>
@@ -42,9 +46,12 @@ const Home = () => {
         </Col>
 
         <Col className="comm-right" xs={0} sm={0} md={7} lg={5} xl={4}>
-          右侧
+          <Author />
+          <Advert />
+          
         </Col>
       </Row>
+      <Footer />
  
  </div>
    )
