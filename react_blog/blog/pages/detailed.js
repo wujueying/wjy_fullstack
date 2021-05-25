@@ -1,7 +1,12 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Head from 'next/head'
-import {Row, Col} from 'antd'
+import {Row, Col , Icon ,Breadcrumb  } from 'antd'
+
 import Header from '../components/Header'
+import Author from '../components/Author'
+import Advert from '../components/Advert'
+import Footer from '../components/Footer'
+import '../static/style/pages/detailed.css'
 const Detailed = () => (
   <>
     <Head>
