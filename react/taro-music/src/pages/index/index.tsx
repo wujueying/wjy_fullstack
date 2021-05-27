@@ -1,10 +1,14 @@
 import { Component } from 'react'
+import Taro from '@tarojs/taro'
 import { connect } from 'react-redux'
-import { View, Button, Text } from '@tarojs/components'
-
+import { View, Button, Text, Swiper, SwiperItem, Image } from '@tarojs/components'
+import { AtSearchBar } from 'taro-ui';
 import { add, minus, asyncAdd } from '../../actions/counter'
-
+import { songType } from '../../constants/commonType'
 import './index.css'
+import api from '../../services/api';
+
+
 
 // #region 书写注意
 //
@@ -17,20 +21,23 @@ import './index.css'
 // #endregion
 
 type PageStateProps = {
-  counter: {
-    num: number
-  }
+  song: songType
 }
 
 type PageDispatchProps = {
-  add: () => void
-  dec: () => void
-  asyncAdd: () => any
+  
 }
 
 type PageOwnProps = {}
 
-type PageState = {}
+type PageState = {
+  searchValue: string;
+  bannerList: Array<{
+    typeTitle: string,
+    pic: string,
+    targetId: number
+  }>
+}
 
 type IProps = PageStateProps & PageDispatchProps & PageOwnProps
 
@@ -38,20 +45,19 @@ interface Index {
   props: IProps;
 }
 
-@connect(({ counter }) => ({
-  counter
+@connect(({song}) => ({
+  song: song
 }), (dispatch) => ({
-  add () {
-    dispatch(add())
-  },
-  dec () {
-    dispatch(minus())
-  },
-  asyncAdd () {
-    dispatch(asyncAdd())
-  }
+  
 }))
-class Index extends Component {
+class Index extends Component <IProps, PageState>{
+  constructor(props) {
+    super(props)
+    this.state = {
+      searchValue: '',
+      bannerList: []
+    }
+  }
   componentWillReceiveProps (nextProps) {
     console.log(this.props, nextProps)
   }
@@ -61,16 +67,56 @@ class Index extends Component {
   componentDidShow () { }
 
   componentDidHide () { }
-
+  componentWillMount () {
+    this.getBanners(){
+      api.get('/banner',{
+        type: 2
+      }).then({data} => {
+        console.log(data)
+        this.setState({
+          bannerList: data.banners 
+        })
+      })
+    }
+  } 
+  goSearch() {
+    // taro ? 
+    Taro.navigateTo({
+      url: '/pages/search/index'
+    })
+  }
   render () {
+    const { searchValue, bannerList } = this.state
+    // console.log();
     return (
+      <>
       <View className='index'>
-        <Button className='add_btn' onClick={this.props.add}>+</Button>
-        <Button className='dec_btn' onClick={this.props.dec}>-</Button>
-        <Button className='dec_btn' onClick={this.props.asyncAdd}>async</Button>
-        <View><Text>{this.props.counter.num}</Text></View>
+        <View onClick={this.goSearch.bind(this)}>
+          <AtSearchBar 
+            actionName="搜一下"
+            disabled={true}
+            value={searchValue}
+            onChange={this.goSearch.bind(this)}
+          />
+        </View>
+        <Swiper
+          className="banner_list"
+          indicatorColor='#999'
+          indicatorActiveColor="#d43c33"
+          circular
+          indicatorDots
+          autoplay>
+          {
+            bannerList.map((item) => 
+              <SwiperItem key={item.targetId} className="banner_list__item">
+                <Image src={item.pic} className='banner_list_item'>
+              </SwiperItem>
+            )
+          }
+        </Swiper>
         <View><Text>Hello, World</Text></View>
       </View>
+      </>
     )
   }
 }
