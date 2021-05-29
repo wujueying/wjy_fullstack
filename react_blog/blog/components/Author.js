@@ -6,9 +6,10 @@ const Author =()=>{
 
     return (
         <div className="author-div comm-box">
-            <div> <Avatar size={100} src="http://blogimages.jspang.com/blogtouxiang1.jpg"  /></div>
+            <div> <Avatar size={100} src="https://iknow-pic.cdn.bcebos.com/503d269759ee3d6dca0839db49166d224e4aded0" /></div>
             <div className="author-introduction">
-                光头程序员，专注于WEB和移动前端开发。要录1000集免费前端视频的傻X。此地维权无门，此时无能为力，此心随波逐流。
+                <h2>Time_</h2>
+                奋斗中的前端练习生，妄图卖码为生，在这里分享技术
                 <Divider>社交账号</Divider>
                 <Avatar size={28} icon={<GithubOutlined />} className="account"/>
                 <Avatar size={28} icon={<QqOutlined />} className="account"/>
