@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import Head from 'next/head'
 import {Row, Col, List} from 'antd'
 import { FireOutlined, CalendarOutlined, FolderOutlined } from '@ant-design/icons';
+import axios from 'axios';
 import Header from '../components/Header'
 import '../static/style/pages/index.css'
 import Author from '../components/Author'
@@ -55,6 +56,18 @@ const Home = () => {
  
  </div>
    )
+}
+
+Home.getInitialProps = async ()=>{
+  const promise = new Promise((resolve)=>{
+    axios('http://127.0.0.1:7001/default/getArticleList').then(
+      (res)=>{
+        console.log('---',res.date)
+        resolve(res.date)
+      }
+    )
+  })
+  return await promise
 }
 
 export default Home
