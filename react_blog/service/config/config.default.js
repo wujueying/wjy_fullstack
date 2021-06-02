@@ -46,6 +46,11 @@ config.mysql = {
       agent: false,
   };
 
+  config.cors = {
+    origin: 'http://localhost:3000',
+    credential:true,  
+    allowMethod: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS'
+  };
 
   return {
     ...config,
