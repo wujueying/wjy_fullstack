@@ -4,4 +4,4 @@ let servicePath = {
     checkLogin : ipUrl+'checkLogin', 
 }
 
-export default servicePath
+export default servicePath;
