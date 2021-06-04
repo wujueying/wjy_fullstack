@@ -26,22 +26,22 @@ module.exports = appInfo => {
   };
 
   
-config.mysql = {
-  // database configuration 
-  client: {
-  // host
-  host: 'localhost',
-  // port
-  port: '6001',
-  // username
-  user: 'root',
-  // password
-  password: '3318509jue', 
-  // database
-  database: 'react_blog',
-  },
+    config.mysql = {
+      // database configuration 
+      client: {
+      // host
+      host: 'localhost',
+      // port
+      port: '3306',
+      // username
+      user: 'root',
+      // password
+      password: '3318509jue', 
+      // database
+      database: 'react_blog',
+      },
   // load into app, default is open 
-      app: false,
+      app: true,
   // load into agent, default is close 
       agent: false,
   };
