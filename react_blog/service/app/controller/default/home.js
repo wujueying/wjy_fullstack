@@ -8,7 +8,8 @@ class HomeController extends Controller {
     this.ctx.body='api hi'
   }
 
-  async getArtcleList() {
+  async getArticleList(){
+    
     let sql =
       "SELECT article.id as id," +
       "article.title as title," +
@@ -18,9 +19,12 @@ class HomeController extends Controller {
       "type.typeName as typeName " +
       "FROM article LEFT JOIN type ON article.type_id = type.Id";
 
-    const results = await this.app.mysql.query(sql);
-    this.ctx.body = { data: results };
-  }
+     const results = await this.app.mysql.query(sql)
+ 
+     this.ctx.body={
+         data:results
+     }
+ }
  
 }
 
