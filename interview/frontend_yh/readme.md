@@ -43,4 +43,7 @@
     www.taobao.com   业务服务器 计算
     g.alicdn.com   CDN服务器   
 
-    
+sideEffects
+webpack  不会把lodash-es 所有的代码 内容 打包进来， 只是打包了你用到的两个模块，这是sideEffect
+
+useExports 是通过Terser 来检测未使用的部分代码 是否有副作用， 
