@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import Head from 'next/head'
+import Link from 'next/link'
 import {Row, Col, List} from 'antd'
 import { FireOutlined, CalendarOutlined, FolderOutlined } from '@ant-design/icons';
 import axios from 'axios';
@@ -34,7 +35,11 @@ const Home = () => {
             dataSource={mylist}
             renderItem={item=>(
               <List.Item>
-                <div className="list-title">{item.title}</div>
+                <div className="list-title">
+                  <Link href={{pathname:'/detailed',query:{id:item.id}}}>
+                    <a>{item.title}</a>
+                  </Link>
+                </div>
                 <div className="list-icon">
                   <span><CalendarOutlined /> 2020-05-20</span>
                   <span><FolderOutlined /> 视频教程</span>
@@ -60,13 +65,14 @@ const Home = () => {
 
 Home.getInitialProps = async ()=>{
   const promise = new Promise((resolve)=>{
-    axios('http://127.0.0.1:7001/default/getArticleList').then(
+    axios('http://127.0.0.1:7002/default/getArticleList').then(
       (res)=>{
-        console.log('---',res.date)
-        resolve(res.date)
+        //console.log('远程获取数据结果:',res.data.data)
+        resolve(res.data)
       }
     )
   })
+
   return await promise
 }
 

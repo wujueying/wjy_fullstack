@@ -12,49 +12,34 @@ import Author from '../components/Author'
 import Advert from '../components/Advert'
 import Footer from '../components/Footer'
 import '../static/style/pages/detailed.css'
-import ReactMarkdown from 'react-markdown';
 import MarkNav from 'markdown-navbar'
 import 'markdown-navbar/dist/navbar.css'
+import axios from 'axios'
+import marked from 'marked'
+import hljs from 'highlight.js'
+import 'highlight.js/styles/monokai-sublime.css'
 
 
-const Detailed = () => {
+const Detailed = (props) => {
 
-  let markdown=
-  '\n# P01:课程介绍和环境搭建\n' +
-  '[ **M** ] arkdown + E [ **ditor** ] = **Mditor**  \n' +
-  '> Mditor 是一个简洁、易于集成、方便扩展、期望舒服的编写 markdown 的编辑器，仅此而已... \n\n' +
-   '**这是加粗的文字**\n\n' +
-  '*这是倾斜的文字*`\n\n' +
-  '***这是斜体加粗的文字***\n\n' +
-  '~~这是加删除线的文字~~ \n\n'+
-  '\`console.log(111)\` \n\n'+
-  '# p02:来个Hello World 初始Vue3.0\n' +
-  '> aaaaaaaaa\n' +
-  '>> bbbbbbbbb\n' +
-  '>>> cccccccccc\n'+
-  '***\n\n\n' +
-  '# p03:Vue3.0基础知识讲解\n' +
-  '> aaaaaaaaa\n' +
-  '>> bbbbbbbbb\n' +
-  '>>> cccccccccc\n\n'+
-  '# p04:Vue3.0基础知识讲解\n' +
-  '> aaaaaaaaa\n' +
-  '>> bbbbbbbbb\n' +
-  '>>> cccccccccc\n\n'+
-  '#5 p05:Vue3.0基础知识讲解\n' +
-  '> aaaaaaaaa\n' +
-  '>> bbbbbbbbb\n' +
-  '>>> cccccccccc\n\n'+
-  '# p06:Vue3.0基础知识讲解\n' +
-  '> aaaaaaaaa\n' +
-  '>> bbbbbbbbb\n' +
-  '>>> cccccccccc\n\n'+
-  '# p07:Vue3.0基础知识讲解\n' +
-  '> aaaaaaaaa\n' +
-  '>> bbbbbbbbb\n' +
-  '>>> cccccccccc\n\n'+
-  '``` var a=11; ```'
+  const renderer = new marked.Renderer();
 
+  marked.setOptions({
+    renderer:renderer,
+    gfm:true, // 启动GitHub样式的markdown
+    pedantic:false, // markdown是否容错
+    sanitize:false,  // 原始输出，忽略HTML标签
+    tables: true,   // 支持GitHub形式的表格，必须打开gfm选项
+    breaks: false,// 是否支持github的换行符
+    smartList: true,
+    highlight: function(code){ // 设置高亮显示
+      return hljs.highlightAuto(code).value
+    }
+  })
+
+  let html = marked(props.article_content)
+
+  
   return (
     <>
       <Head>
@@ -81,10 +66,7 @@ const Detailed = () => {
                 <span><FireOutlined />5498人</span>
               </div>
               <div className="detailed-content">
-                <ReactMarkdown
-                  children={markdown}
-                  escapeHtml={false}
-                />
+               {html}
               </div>
             </div>
           </div>
@@ -98,8 +80,8 @@ const Detailed = () => {
                 <div className="nav-title">文章目录</div>
                 <MarkNav
                   className="article-menu"
-                  source={markdown}
-                  ordered={true}
+                  source={html}
+                  ordered={false}
                 />
               </div>
           </Affix>
@@ -109,6 +91,23 @@ const Detailed = () => {
    </>
   )
 
+}
+
+Detailed.getInitialProps = async(context)=>{
+  console.log(context.query.id)
+
+  let id = context.query.id
+
+  const promise = new Promise((resolve)=>{
+    axios('http://127.0.0.1:7002/default/getArticleById').then(
+      (res)=>{
+        console.log(res)
+        resolve(res.data.data[0])
+      }
+    )
+  })
+
+  return await promise
 }
 
 export default Detailed

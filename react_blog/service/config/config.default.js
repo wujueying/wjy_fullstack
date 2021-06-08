@@ -48,10 +48,20 @@ module.exports = appInfo => {
 
   config.cors = {
     origin: 'http://localhost:3000',
-    credential:true,  
+    credential:true,//允许cookie跨域  
     allowMethod: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS'
   };
 
+  config.security={
+    csrf:{
+      enable: false
+    },
+    domainWhiteList:['*']
+  };
+  // config.cors = {
+  //   origin:'*',
+  //   allowMethod:'GET,HEAD,PUT,DELETE,PATCH,OPTIONS'
+  // }
   return {
     ...config,
     ...userConfig,

@@ -12,7 +12,7 @@ const Header = () => (
     <div className="header">
         <Row type="flex" justify="center">
             <Col xs={24} sm={24} md={10} lg={15} xl={12}>
-                <span className="header-logo">水滴日记</span>
+                <span className="header-logo">个人博客</span>
                 <span className="header-txt">记录一点一滴的美好</span>
             </Col>
             
