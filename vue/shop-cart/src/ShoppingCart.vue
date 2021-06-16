@@ -13,6 +13,14 @@
          </li>
      </ul>
      <p>Total: {{total}}</p>
+     <p>
+       <button 
+        :disabled="!products.length"
+        @click="checkout(products)"
+        Checkout
+       >Checkout</button>
+     </p>
+     <p v-show="checkoutStatus">Checkout {{checkoutStatus}}</p>
   </div>
 </template>
 
@@ -20,11 +28,19 @@
 import {mapState, mapActions, mapGetters } from 'vuex'; 
 export default { 
   computed: { 
+      ...mapState({
+        checkoutStatus: state => state.cart.checkoutStatus
+      }),
       ...mapGetters('cart', { 
           products: 'cartProducts',
           total: 'cartTotalPrice'
       }) 
-  } 
+  } ,
+  methods:{
+    checkout (products){
+      this.$store.dispatch('cart/checkout', products)
+    }
+  }
  
 } 
 </script>

@@ -7,6 +7,7 @@
         {{product.title}} = {{product.price}}
           <br/>
           <button
+            :disabled="!product.inventory"
             @click="addProductToCart(product)"
           >
                Add to Cart  
