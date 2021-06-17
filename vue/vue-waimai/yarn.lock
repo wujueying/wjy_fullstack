@@ -2,6 +2,109 @@
 # yarn lockfile v1
 
 
+"@better-scroll/core@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.nlark.com/@better-scroll/core/download/@better-scroll/core-2.3.1.tgz#4c29a3b7ea462c659dba0a288a060ddb1a4dde14"
+  integrity sha1-TCmjt+pGLGWdugooigYN2xpN3hQ=
+  dependencies:
+    "@better-scroll/shared-utils" "^2.3.1"
+
+"@better-scroll/indicators@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.nlark.com/@better-scroll/indicators/download/@better-scroll/indicators-2.3.1.tgz#e9ef087f38d16ced3e873f80b41d9ab07d4224d3"
+  integrity sha1-6e8IfzjRbO0+hz+AtB2asH1CJNM=
+  dependencies:
+    "@better-scroll/core" "^2.3.1"
+
+"@better-scroll/infinity@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.nlark.com/@better-scroll/infinity/download/@better-scroll/infinity-2.3.1.tgz#862d5afeb51224dbff4d7ed477cefd94fecff164"
+  integrity sha1-hi1a/rUSJNv/TX7Ud879lP7P8WQ=
+  dependencies:
+    "@better-scroll/core" "^2.3.1"
+
+"@better-scroll/mouse-wheel@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.nlark.com/@better-scroll/mouse-wheel/download/@better-scroll/mouse-wheel-2.3.1.tgz#486f72cac74d8bdf46524d4aac68bb6f273016dd"
+  integrity sha1-SG9yysdNi99GUk1KrGi7bycwFt0=
+  dependencies:
+    "@better-scroll/core" "^2.3.1"
+
+"@better-scroll/movable@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.nlark.com/@better-scroll/movable/download/@better-scroll/movable-2.3.1.tgz#82bfbccf5fad84443b465616b2d14a40b13995a1"
+  integrity sha1-gr+8z1+thEQ7RlYWstFKQLE5laE=
+  dependencies:
+    "@better-scroll/core" "^2.3.1"
+
+"@better-scroll/nested-scroll@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.nlark.com/@better-scroll/nested-scroll/download/@better-scroll/nested-scroll-2.3.1.tgz#d8ca13cec7e36449a1536c26b52fe633dc68c914"
+  integrity sha1-2MoTzsfjZEmhU2wmtS/mM9xoyRQ=
+  dependencies:
+    "@better-scroll/core" "^2.3.1"
+
+"@better-scroll/observe-dom@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.nlark.com/@better-scroll/observe-dom/download/@better-scroll/observe-dom-2.3.1.tgz#bfb09456305b8a47dae60804d7647f9db36ae104"
+  integrity sha1-v7CUVjBbikfa5ggE12R/nbNq4QQ=
+  dependencies:
+    "@better-scroll/core" "^2.3.1"
+
+"@better-scroll/observe-image@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.nlark.com/@better-scroll/observe-image/download/@better-scroll/observe-image-2.3.1.tgz#85bc754dcd88cdcba358897376715fac3150329a"
+  integrity sha1-hbx1Tc2IzcujWIlzdnFfrDFQMpo=
+  dependencies:
+    "@better-scroll/core" "^2.3.1"
+
+"@better-scroll/pull-down@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.nlark.com/@better-scroll/pull-down/download/@better-scroll/pull-down-2.3.1.tgz#275ac78f83e9207dbc5a374173375b7df763d09c"
+  integrity sha1-J1rHj4PpIH28WjdBczdbffdj0Jw=
+  dependencies:
+    "@better-scroll/core" "^2.3.1"
+
+"@better-scroll/pull-up@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.nlark.com/@better-scroll/pull-up/download/@better-scroll/pull-up-2.3.1.tgz#9b167d8e28455c112e6098b6ce9656a67c07b090"
+  integrity sha1-mxZ9jihFXBEuYJi2zpZWpnwHsJA=
+  dependencies:
+    "@better-scroll/core" "^2.3.1"
+
+"@better-scroll/scroll-bar@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.nlark.com/@better-scroll/scroll-bar/download/@better-scroll/scroll-bar-2.3.1.tgz#f66efc342f771ade52016a721a2a6154833b51cf"
+  integrity sha1-9m78NC93Gt5SAWpyGiphVIM7Uc8=
+  dependencies:
+    "@better-scroll/core" "^2.3.1"
+
+"@better-scroll/shared-utils@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.nlark.com/@better-scroll/shared-utils/download/@better-scroll/shared-utils-2.3.1.tgz#e863a6ed32aa79d37870dafe26b052827017a88f"
+  integrity sha1-6GOm7TKqedN4cNr+JrBSgnAXqI8=
+
+"@better-scroll/slide@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.nlark.com/@better-scroll/slide/download/@better-scroll/slide-2.3.1.tgz#9177028ff6dcd866ba4fdd4ca87d5cf54bf57684"
+  integrity sha1-kXcCj/bc2Ga6T91MqH1c9Uv1doQ=
+  dependencies:
+    "@better-scroll/core" "^2.3.1"
+
+"@better-scroll/wheel@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.nlark.com/@better-scroll/wheel/download/@better-scroll/wheel-2.3.1.tgz#f64776724f3287a7c420d238a175a7b3c8c85685"
+  integrity sha1-9kd2ck8yh6fEINI4oXWns8jIVoU=
+  dependencies:
+    "@better-scroll/core" "^2.3.1"
+
+"@better-scroll/zoom@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.nlark.com/@better-scroll/zoom/download/@better-scroll/zoom-2.3.1.tgz#0addef4a5dacd3d3b8f23fa6a937bdec05338b0e"
+  integrity sha1-Ct3vSl2s09O48j+mqTe97AUziw4=
+  dependencies:
+    "@better-scroll/core" "^2.3.1"
+
 "@types/q@^1.5.1":
   version "1.5.4"
   resolved "https://registry.nlark.com/@types/q/download/@types/q-1.5.4.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fq%2Fdownload%2F%40types%2Fq-1.5.4.tgz#15925414e0ad2cd765bfef58842f7e26a7accb24"
@@ -932,6 +1035,26 @@ batch@0.6.1:
   version "0.6.1"
   resolved "https://registry.nlark.com/batch/download/batch-0.6.1.tgz#dc34314f4e679318093fc760272525f94bf25c16"
   integrity sha1-3DQxT05nkxgJP8dgJyUl+UvyXBY=
+
+better-scroll@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.nlark.com/better-scroll/download/better-scroll-2.3.1.tgz?cache=0&sync_timestamp=1620475699673&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fbetter-scroll%2Fdownload%2Fbetter-scroll-2.3.1.tgz#56acf254adc09528c5f6d6e0be216932674944e9"
+  integrity sha1-VqzyVK3AlSjF9tbgviFpMmdJROk=
+  dependencies:
+    "@better-scroll/core" "^2.3.1"
+    "@better-scroll/indicators" "^2.3.1"
+    "@better-scroll/infinity" "^2.3.1"
+    "@better-scroll/mouse-wheel" "^2.3.1"
+    "@better-scroll/movable" "^2.3.1"
+    "@better-scroll/nested-scroll" "^2.3.1"
+    "@better-scroll/observe-dom" "^2.3.1"
+    "@better-scroll/observe-image" "^2.3.1"
+    "@better-scroll/pull-down" "^2.3.1"
+    "@better-scroll/pull-up" "^2.3.1"
+    "@better-scroll/scroll-bar" "^2.3.1"
+    "@better-scroll/slide" "^2.3.1"
+    "@better-scroll/wheel" "^2.3.1"
+    "@better-scroll/zoom" "^2.3.1"
 
 bfj-node4@^5.2.0:
   version "5.3.1"
@@ -6863,6 +6986,11 @@ vue@^2.5.2:
   version "2.6.14"
   resolved "https://registry.nlark.com/vue/download/vue-2.6.14.tgz?cache=0&sync_timestamp=1623098047096&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fvue%2Fdownload%2Fvue-2.6.14.tgz#e51aa5250250d569a3fbad3a8a5a687d6036e235"
   integrity sha1-5RqlJQJQ1Wmj+606ilpofWA24jU=
+
+vuex@^3.6.2:
+  version "3.6.2"
+  resolved "https://registry.nlark.com/vuex/download/vuex-3.6.2.tgz?cache=0&sync_timestamp=1621868918134&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fvuex%2Fdownload%2Fvuex-3.6.2.tgz#236bc086a870c3ae79946f107f16de59d5895e71"
+  integrity sha1-I2vAhqhww655lG8QfxbeWdWJXnE=
 
 watchpack-chokidar2@^2.0.1:
   version "2.0.1"

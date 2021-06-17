@@ -1,5 +1,5 @@
 <template>
-    <div>Seller</div>
+    <div>Ratings</div>
 </template>
 <script>
 export default {
