@@ -26,6 +26,6 @@ app.get('/', async(req, res) => {
     count++;    
     await redis.set('count', count);
     res.render('index', { count: count });
-    // fs.createReadStream('./index.html').pipe(res); 
+    // fs.createReadStream('./index.html').pipe(res);
 })
 app.listen(1234);

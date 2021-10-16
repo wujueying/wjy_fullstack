@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": false, // false意思是不需要显示声明变量的any类型，true则相反
+    "target": "es5", // 编译后版本  大部分的浏览器都不能完全识别es6语法  需要将其通过bundle编译转换
+    "lib": [
+      "dom",  // document.getElementById('root')
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true, // 允许混合编译js文件
+    "skipLibCheck": true, 
+    "esModuleInterop": true,  // 是否允许使用common.js的import方式引入
+    "allowSyntheticDefaultImports": true,  // 
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",  // 编译器的工作方式
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx"  // 允许编译器支持react代码
+  },
+  "include": [
+    "src"
+  ]
+}
