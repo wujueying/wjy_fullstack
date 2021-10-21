@@ -8,8 +8,8 @@ interface State {
   members: []
 }
 export class MembersPage extends React.Component<Props, State> {
-  constructor(props) {
-    super(props);
+  constructor(Props) {
+    super(Props);
     this.state = {
       members:[]
     }
@@ -21,7 +21,7 @@ export class MembersPage extends React.Component<Props, State> {
       .then((members) => {
         console.log(members)
         this.setState({
-          members:members
+          // members:members
         })
       })
   }
